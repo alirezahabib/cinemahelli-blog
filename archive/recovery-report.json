@@ -4,6 +4,96 @@
   "recoveredPosts": 54,
   "recoveredPostMedia": 33,
   "unavailablePostMedia": 52,
+  "hiddenUnavailablePosts": [
+    {
+      "id": 54,
+      "title": "soleness"
+    },
+    {
+      "id": 53,
+      "title": "Wane"
+    },
+    {
+      "id": 34,
+      "title": "The 400 Blows-François Truffaut"
+    },
+    {
+      "id": 33,
+      "title": "Freedom In Prison - Poster"
+    },
+    {
+      "id": 32,
+      "title": "Taxi Driver - Martin Scorsese"
+    },
+    {
+      "id": 31,
+      "title": "Life"
+    },
+    {
+      "id": 30,
+      "title": "The Tree of Life - Terrence Malick"
+    },
+    {
+      "id": 29,
+      "title": "Regret"
+    },
+    {
+      "id": 25,
+      "title": "North By Northwest - Alfred Hitchcock"
+    },
+    {
+      "id": 24,
+      "title": "Hope"
+    },
+    {
+      "id": 23,
+      "title": "Freedom in Prison - Poster 1"
+    },
+    {
+      "id": 22,
+      "title": "خزانک"
+    },
+    {
+      "id": 21,
+      "title": "بهشت رنگی"
+    },
+    {
+      "id": 20,
+      "title": "پرواز را"
+    },
+    {
+      "id": 18,
+      "title": "Samsara - Ron Fricke"
+    },
+    {
+      "id": 17,
+      "title": "The Turin Horse - Bela Tarr"
+    },
+    {
+      "id": 16,
+      "title": "M-Fritz Lang"
+    },
+    {
+      "id": 13,
+      "title": "Rome Open City-Roberto Rossellini"
+    },
+    {
+      "id": 12,
+      "title": "Mother-Ali Hatami"
+    },
+    {
+      "id": 11,
+      "title": "Scarface-Brian De Palma"
+    },
+    {
+      "id": 10,
+      "title": "عنوان‌های سخنرانی‌های نشست علوم انسانی و هنر ِ فردا (یکشنبه)، که پس از پخش فیلم برگزار می‌شوند."
+    },
+    {
+      "id": 9,
+      "title": "The Sacrifice-Andrei Tarkovsky"
+    }
+  ],
   "linkedAttachments": [
     {
       "postId": 46,
@@ -43,7 +133,7 @@
     }
   ],
   "localAssetFiles": 60,
-  "note": "Unavailable media and linked attachments were referenced by archived HTML but returned no downloadable file from Wayback during recovery.",
+  "note": "Unavailable media and linked attachments were referenced by the source HTML but no longer return a downloadable file.",
   "recovered": [
     {
       "postId": 52,

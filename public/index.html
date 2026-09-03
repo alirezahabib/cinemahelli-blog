@@ -1,71 +1,98 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fa" dir="rtl">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#111111">
-    <meta name="description" content="آرشیو وب‌سایت سینما حلّی؛ وب‌سایتی برای علاقه‌مندان به سینما">
-    <link rel="icon" href="/assets/archive-p1/8f987634eeb057a2.png">
-    <link rel="stylesheet" href="/styles.css">
-    <title>سینما حلّی</title>
-  </head>
-  <body>
-    <a class="skip-link" href="#content">رفتن به مطالب</a>
-    <header class="site-header">
-      <div class="film-strip" aria-hidden="true"></div>
-      <div class="header-inner">
-        <a class="brand" href="/" data-route>
-          <span>سینما حلّی</span>
-          <small>وبسایتی برای علاقه‌مندان به سینما</small>
-        </a>
-        <nav aria-label="منوی اصلی">
-          <a href="/" data-route>خانه</a>
-          <a href="/category/مکتب-خانه/" data-route>مکتب خانه</a>
-          <a href="/category/معرفی-فیلم/" data-route>معرفی فیلم</a>
-          <a href="/category/قاب-های-به-یاد-ماندنی/" data-route>قاب‌های به یاد ماندنی</a>
-          <a href="/category/نقد/" data-route>نقد</a>
-          <a href="/category/گالری/" data-route>گالری</a>
-          <a href="/page/about-me" data-route>درباره ما</a>
-        </nav>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="وبسایتی برای علاقه‌مندان به سینما">
+  <meta name="keywords" content="سینما حلی, نقد فیلم, cinema helli, سینما, cinema, علامه حلی 1">
+  <link rel="shortcut icon" href="/theme/images/favicon.png">
+  <link rel="alternate" type="application/rss+xml" href="/rss.xml">
+  <link rel="stylesheet" href="/theme/sharedrtl.css">
+  <link rel="stylesheet" href="/theme/original.css">
+  <link rel="stylesheet" href="/theme/static-overrides.css">
+  <title>سینما حلّی</title>
+</head>
+<body>
+<div id="print"><div class="title"><h2>سینما حلّی</h2><span>وبسایتی برای علاقه‌مندان به سینما</span></div></div>
+<div id="wrp">
+  <div class="main_menu"><div class="cnt"><ul>
+    <li><a href="/" data-route>خانه</a></li>
+    <li><a href="/category/%D9%85%DA%A9%D8%AA%D8%A8-%D8%AE%D8%A7%D9%86%D9%87/" data-route>مکتب خانه</a></li>
+    <li><a href="/category/%D9%85%D8%B9%D8%B1%D9%81%DB%8C-%D9%81%DB%8C%D9%84%D9%85/" data-route>معرفی فیلم</a></li>
+    <li><a href="/category/%D9%82%D8%A7%D8%A8-%D9%87%D8%A7%DB%8C-%D8%A8%D9%87-%DB%8C%D8%A7%D8%AF-%D9%85%D8%A7%D9%86%D8%AF%D9%86%DB%8C/" data-route>قاب‌های به یاد ماندنی</a></li>
+    <li><a href="/category/%D9%86%D9%82%D8%AF/" data-route>نقد</a></li>
+    <li><a href="/category/%DA%AF%D8%A7%D9%84%D8%B1%DB%8C/" data-route>گالری</a></li>
+    <li><a href="/page/about-me" data-route>درباره ما</a></li>
+    <li><a href="https://www.youtube.com/@cinemahelli" target="_blank" rel="noopener">یوتیوب</a></li>
+  </ul></div></div>
+
+  <div class="header">
+    <div class="hdr_right"><div class="title_desc">
+      <h1><a href="/" data-route>سینما حلّی</a></h1>
+      <div class="desc"><h2>وبسایتی برای علاقه‌مندان به سینما</h2></div>
+    </div></div>
+    <div class="hdr_left"></div>
+  </div>
+
+  <div class="box1">
+    <div class="bx_left">
+      <div class="mod_left_blank"><div class="cnt">
+        <div class="blogImage"><img src="/theme/images/logo.jpg" alt="سینما حلّی"></div>
+        <div class="blog_description"><h4>گروه ساخت، نقد و بررسی فیلم علامه حلّی 1 تهران<br>گروه "سینما حلّی" در سال 1394 با هدف ساخت فیلم کوتاه، نقد و بررسی فیلم تشکیل شد.<br>سینما حلّی جایی برای هم فیلم بینی، گپ و گفت و تبادل نظر دربارۀ فیلم هایی که دیده ایم و سرآغازی برای ساخت فیلم.</h4></div>
+        <form id="search-form" class="search-box" role="search">
+          <div class="search-wrapper"><input id="search" class="text" placeholder="جستجو ..." type="search"></div>
+          <input class="submit" type="submit" value="" aria-label="جستجو">
+        </form>
+      </div></div>
+
+      <div class="mod_left">
+        <div class="title"><div class="cnt">طبقه بندی موضوعی</div></div>
+        <div class="cnt"><div class="sideCell"><ul id="category-list" class="cats"></ul></div></div>
       </div>
-    </header>
 
-    <div class="layout">
-      <aside class="sidebar">
-        <img class="logo" src="/assets/archive-p1/72832707d8ed3f6b.jpg" alt="سینما حلّی">
-        <p class="intro"><strong>گروه ساخت، نقد و بررسی فیلم علامه حلّی ۱ تهران</strong><br>گروه «سینما حلّی» در سال ۱۳۹۴ با هدف ساخت فیلم کوتاه، نقد و بررسی فیلم تشکیل شد.</p>
-        <label class="search-label" for="search">جستجو در آرشیو</label>
-        <input id="search" type="search" placeholder="عنوان یا متن مطلب…" autocomplete="off">
-        <section>
-          <h2>طبقه‌بندی موضوعی</h2>
-          <div id="category-links" class="side-links"></div>
-        </section>
-        <section>
-          <h2>آرشیو</h2>
-          <div class="side-links">
-            <a href="/archive/1397/1/" data-route>فروردین ۱۳۹۷</a>
-            <a href="/archive/1396/8/" data-route>آبان ۱۳۹۶</a>
-            <a href="/archive/1395/10/" data-route>دی ۱۳۹۵</a>
-            <a href="/archive/1395/9/" data-route>آذر ۱۳۹۵</a>
-            <a href="/archive/1395/8/" data-route>آبان ۱۳۹۵</a>
-            <a href="/archive/1395/6/" data-route>شهریور ۱۳۹۵</a>
-            <a href="/archive/1395/5/" data-route>مرداد ۱۳۹۵</a>
-          </div>
-        </section>
-        <p class="archive-note">بازسازی‌شده از آرشیو اینترنت — ۵۴ مطلب بازیابی شده</p>
-      </aside>
+      <div class="mod_left">
+        <div class="title"><div class="cnt">بایگانی</div></div>
+        <div class="cnt"><div class="sideCell"><ul class="links">
+          <li><a href="/archive/1397/1/" data-route>فروردين ۱۳۹۷ </a><span class="count">&nbsp;(۱)</span></li>
+          <li><a href="/archive/1396/8/" data-route>آبان ۱۳۹۶ </a><span class="count">&nbsp;(۱)</span></li>
+          <li><a href="/archive/1395/10/" data-route>دی ۱۳۹۵ </a><span class="count">&nbsp;(۱)</span></li>
+          <li><a href="/archive/1395/9/" data-route>آذر ۱۳۹۵ </a><span class="count">&nbsp;(۵)</span></li>
+          <li><a href="/archive/1395/8/" data-route>آبان ۱۳۹۵ </a><span class="count">&nbsp;(۵)</span></li>
+          <li><a href="/archive/1395/6/" data-route>شهریور ۱۳۹۵ </a><span class="count">&nbsp;(۳۸)</span></li>
+          <li><a href="/archive/1395/5/" data-route>مرداد ۱۳۹۵ </a><span class="count">&nbsp;(۳)</span></li>
+        </ul></div></div>
+      </div>
 
-      <main id="content" tabindex="-1">
-        <div id="status" class="status">در حال بارگذاری آرشیو…</div>
-        <div id="view"></div>
-      </main>
+      <div class="mod_left">
+        <div class="title"><div class="cnt">نویسندگان</div></div>
+        <div class="cnt"><div class="sideCell"><ul class="links">
+          <li><a href="/by_author/lrageTUqBgc" data-route>علیرضا حبیب زاده </a><span class="count">&nbsp;(18)</span></li>
+          <li><a href="/by_author/N9HDt4eq1II" data-route>سروش شهبازی </a><span class="count">&nbsp;(17)</span></li>
+          <li><a href="/by_author/-LTsnNt0RVE" data-route>Ha di! </a><span class="count">&nbsp;(10)</span></li>
+          <li><a href="/by_author/7xABrqRo-90" data-route>آقای طاهری </a><span class="count">&nbsp;(9)</span></li>
+        </ul></div></div>
+      </div>
+
+      <div class="mod_left">
+        <div class="title"><div class="cnt">پیوندها</div></div>
+        <div class="cnt"><div class="sideCell"><ul class="links">
+          <li><a href="http://www.1-3helli1.blog.ir" target="_blank" rel="noopener">دورۀ 31 علامه حلی 1 تهران</a></li>
+          <li><a href="http://www.helli1sch.ir" target="_blank" rel="noopener">راهنمایی علامه حلی 1 تهران</a></li>
+          <li><a href="https://www.youtube.com/@cinemahelli" target="_blank" rel="noopener">کانال یوتیوب سینما حلّی</a></li>
+        </ul></div></div>
+      </div>
     </div>
 
-    <footer>
-      <span>سینما حلّی: سرآغازی برای ساخت فیلم…</span>
-      <a href="/rss.xml">RSS</a>
-      <a href="https://web.archive.org/web/20210918102921/http://cinemahelli.ir/">نسخه در Wayback Machine</a>
-    </footer>
-    <script type="module" src="/app.js"></script>
-  </body>
+    <main class="bx_center"><div id="content" class="mod_center" aria-live="polite"></div></main>
+    <div style="clear:both"></div>
+  </div>
+</div>
+
+<div class="footer"><div class="cnt">
+  <span class="ftr_right"><span class="links">سینما حلّی : سرآغازی برای ساخت فیلم...</span></span>
+  <span class="ftr_left"><span class="icons"><a href="/rss.xml" class="rss" title="RSS"></a></span></span>
+</div></div>
+<script type="module" src="/app.js"></script>
+</body>
 </html>

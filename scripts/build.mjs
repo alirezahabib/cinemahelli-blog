@@ -115,6 +115,20 @@ const posts = source.posts.map((post) => {
   };
 });
 
+function plainText(html = "") {
+  return html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, " ")
+    .replace(/<[^>]*>/g, " ")
+    .replace(/&nbsp;/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+const hiddenUnavailablePosts = posts
+  .filter((post) => plainText(post.bodyHtml).length === 0 && post.images.length > 0 && post.images.every((image) => !image.localSrc))
+  .map((post) => ({ id: post.id, title: post.title }));
+const hiddenIds = new Set(hiddenUnavailablePosts.map((post) => post.id));
+const publishedPosts = posts.filter((post) => !hiddenIds.has(post.id));
+
 await mkdir(path.join(publicDir, "data"), { recursive: true });
 await writeFile(
   path.join(publicDir, "data", "posts.json"),
@@ -127,9 +141,10 @@ const report = {
   recoveredPosts: posts.length,
   recoveredPostMedia: recovered.length,
   unavailablePostMedia: unavailable.length,
+  hiddenUnavailablePosts,
   linkedAttachments: [...linkedAttachments.values()],
   localAssetFiles: localAssets.size,
-  note: "Unavailable media and linked attachments were referenced by archived HTML but returned no downloadable file from Wayback during recovery.",
+  note: "Unavailable media and linked attachments were referenced by the source HTML but no longer return a downloadable file.",
   recovered,
   unavailable,
 };
@@ -140,7 +155,7 @@ const xml = (value) => String(value).replace(/[<>&'\"]/g, (char) => ({
   "<": "&lt;", ">": "&gt;", "&": "&amp;", "'": "&apos;", "\"": "&quot;",
 })[char]);
 
-const rssItems = posts.slice(0, 20).map((post) => `
+const rssItems = publishedPosts.slice(0, 20).map((post) => `
     <item>
       <title>${xml(post.title)}</title>
       <link>https://cinemahelli.ir/post/${post.id}/</link>
@@ -158,7 +173,7 @@ await writeFile(path.join(publicDir, "rss.xml"), `<?xml version="1.0" encoding="
 const sitemapEntries = [
   "<url><loc>https://cinemahelli.ir/</loc></url>",
   "<url><loc>https://cinemahelli.ir/page/about-me</loc></url>",
-  ...posts.map((post) => {
+  ...publishedPosts.map((post) => {
     const suffix = post.archiveUrl.match(/\/post\/\d+\/(.*)$/)?.[1]?.replace(/[?#].*$/, "") || "";
     return `<url><loc>${xml(`https://cinemahelli.ir/post/${post.id}/${suffix}`)}</loc></url>`;
   }),
@@ -167,4 +182,4 @@ const sitemapEntries = [
 await writeFile(path.join(publicDir, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${sitemapEntries.join("")}</urlset>\n`);
 
-console.log(`Built ${posts.length} posts; ${recovered.length} media files local, ${unavailable.length} unavailable in Wayback.`);
+console.log(`Built ${posts.length} records (${publishedPosts.length} visible); ${recovered.length} media files local, ${unavailable.length} unavailable at source.`);
