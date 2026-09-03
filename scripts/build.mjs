@@ -110,10 +110,21 @@ const knownAuthors = [
   "Ha di!",
   "آقای طاهری",
 ];
+const taheriPostIds = new Set([49, 48, 42, 28, 27, 10, 7, 5, 4]);
 
 function authorFor(post) {
   if (post.bodyHtml.includes("محمّد عبّاسی")) return "محمّد عبّاسی";
+  if (taheriPostIds.has(post.id)) return "آقای طاهری";
   return knownAuthors.find((author) => post.detail.includes(author)) || "";
+}
+
+function bodyFor(post) {
+  const body = cleanBody(post.bodyHtml);
+  if (post.id !== 46) return body;
+  return body.replace(
+    /<div\s+style=("|')text-align:\s*right;?\1>\s*<font\b[^>]*>\s*نویسنده:\s*<\/font>\s*<font\b[^>]*>\s*محمّد عبّاسی\s*<\/font>\s*<\/div>/i,
+    "",
+  );
 }
 
 const recovered = [];
@@ -139,7 +150,7 @@ const posts = source.posts.map((post) => {
     ...post,
     author: authorFor(post),
     category: categoryFor(post.id),
-    bodyHtml: cleanBody(post.bodyHtml),
+    bodyHtml: bodyFor(post),
     images,
   };
 });
