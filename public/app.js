@@ -56,6 +56,15 @@ function postUrl(post) {
   return `/post/${post.id}/${suffix}`;
 }
 
+function isAppRoute(pathname) {
+  return pathname === "/"
+    || pathname.startsWith("/post/")
+    || pathname.startsWith("/page/")
+    || pathname.startsWith("/category/")
+    || pathname.startsWith("/archive/")
+    || pathname.startsWith("/by_author/");
+}
+
 function postAuthor(post) {
   return post.author || "";
 }
@@ -104,8 +113,8 @@ function prepareBody(post, full) {
       anchor.replaceWith(unavailable);
       return;
     }
-    if (anchor.href.startsWith(location.origin)) anchor.dataset.route = "";
-    else { anchor.target = "_blank"; anchor.rel = "noopener"; }
+    if (anchor.origin === location.origin && isAppRoute(anchor.pathname)) anchor.dataset.route = "";
+    else if (anchor.origin !== location.origin) { anchor.target = "_blank"; anchor.rel = "noopener"; }
   });
 
   if (!full && plainText(post.bodyHtml).length > 500) {
@@ -249,7 +258,7 @@ function renderCategories() {
 
 document.addEventListener("click", (event) => {
   const link = event.target.closest("a[data-route]");
-  if (!link || link.origin !== location.origin || event.metaKey || event.ctrlKey) return;
+  if (!link || link.origin !== location.origin || !isAppRoute(link.pathname) || event.metaKey || event.ctrlKey) return;
   event.preventDefault();
   history.pushState({}, "", link.href);
   route();
