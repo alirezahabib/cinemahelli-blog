@@ -186,7 +186,7 @@ function renderList(items, page = 1) {
       url.searchParams.set("page", number);
       link.href = url.pathname + url.search;
       link.dataset.route = "";
-      link.textContent = number.toLocaleString("fa");
+      link.textContent = String(number);
       if (number === page) link.className = "selected";
       pagination.append(link);
     }
@@ -251,7 +251,7 @@ function renderCategories() {
   for (const [slug, key] of Object.entries(categorySlugs)) {
     const item = document.createElement("li");
     const count = visible.filter((post) => post.category === key).length;
-    item.innerHTML = `<a href="/category/${slug}/" data-route><h3>${categoryLabels[key]} </h3></a><span class="count">&nbsp;(${count.toLocaleString("fa")})</span>`;
+    item.innerHTML = `<a href="/category/${slug}/" data-route><h3>${categoryLabels[key]} </h3></a><span class="count">&nbsp;(${count})</span>`;
     list.append(item);
   }
 }
