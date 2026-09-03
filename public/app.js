@@ -26,7 +26,7 @@ const authorRoutes = {
   "mohammad-abbasi": "محمّد عبّاسی",
 };
 
-const homepageOrder = [8, 6, 5, 46, 40, 38, 49, 7, 50, 52];
+const homepageOrder = [8, 46, 6, 5, 40, 38, 49, 7, 50, 52];
 
 const archiveTokens = {
   "1397/1": ["۹۷/۰۱", "فروردین ۹۷"],
