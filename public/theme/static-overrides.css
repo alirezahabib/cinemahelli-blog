@@ -34,6 +34,9 @@
   body { zoom: 1.1; }
 }
 
+#wrp .header .title_desc h1 { margin-bottom: 6px; }
+#wrp .header .title_desc .desc h2 { margin-top: 0; }
+
 @media screen and (max-width: 767px) {
   body {
     overflow-x: hidden;
