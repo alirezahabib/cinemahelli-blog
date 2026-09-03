@@ -1,0 +1,376 @@
+{
+  "assets": [
+    {
+      "contentType": "text/css",
+      "id": "6f96b0cb339177fb",
+      "kind": "stylesheet",
+      "name": "banner-styles.css",
+      "path": "/var/folders/9f/28s7qvcj35l34vsgnjjt6zdw0000gn/T/browser-use/assets/d6993942-416a-40a6-b94a-9e90bec71580/6f96b0cb339177fb.css",
+      "url": "https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3"
+    },
+    {
+      "contentType": "text/css",
+      "id": "264b6770f2240e3f",
+      "kind": "stylesheet",
+      "name": "iconochive.css",
+      "path": "/var/folders/9f/28s7qvcj35l34vsgnjjt6zdw0000gn/T/browser-use/assets/d6993942-416a-40a6-b94a-9e90bec71580/264b6770f2240e3f.css",
+      "url": "https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv"
+    },
+    {
+      "contentType": "",
+      "id": "ab94e302e6de3cde",
+      "kind": "stylesheet",
+      "name": "sharedrtl.css",
+      "path": "/var/folders/9f/28s7qvcj35l34vsgnjjt6zdw0000gn/T/browser-use/assets/d6993942-416a-40a6-b94a-9e90bec71580/ab94e302e6de3cde.css",
+      "url": "https://web.archive.org/web/20210918102921cs_/http://blog.ir/media/css/sharedrtl.css?eVxnLP"
+    },
+    {
+      "contentType": "",
+      "id": "c09ab52258b43e4d",
+      "kind": "stylesheet",
+      "name": "style.css",
+      "path": "/var/folders/9f/28s7qvcj35l34vsgnjjt6zdw0000gn/T/browser-use/assets/d6993942-416a-40a6-b94a-9e90bec71580/c09ab52258b43e4d.css",
+      "url": "https://web.archive.org/web/20210918102921cs_/http://cinemahelli.ir/static/RAu5zEG0FGQ/1972414564/style.css"
+    },
+    {
+      "contentType": "image/png",
+      "id": "79accb3756bc27ac",
+      "kind": "image",
+      "name": "wayback-toolbar-logo-100.png",
+      "path": "/var/folders/9f/28s7qvcj35l34vsgnjjt6zdw0000gn/T/browser-use/assets/d6993942-416a-40a6-b94a-9e90bec71580/79accb3756bc27ac.png",
+      "url": "https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-100.png"
+    },
+    {
+      "contentType": "image/gif",
+      "id": "8f40d6b0a08d2618",
+      "kind": "image",
+      "name": "loading.gif",
+      "path": "/var/folders/9f/28s7qvcj35l34vsgnjjt6zdw0000gn/T/browser-use/assets/d6993942-416a-40a6-b94a-9e90bec71580/8f40d6b0a08d2618.gif",
+      "url": "https://web-static.archive.org/_static/images/loading.gif"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "72832707d8ed3f6b",
+      "kind": "image",
+      "name": "Cinema-helli-logo.jpg",
+      "path": "/var/folders/9f/28s7qvcj35l34vsgnjjt6zdw0000gn/T/browser-use/assets/d6993942-416a-40a6-b94a-9e90bec71580/72832707d8ed3f6b.jpg",
+      "url": "https://web.archive.org/web/20210918102921im_/http://bayanbox.ir/view/957970217618257026/Cinema-helli-logo.jpg"
+    },
+    {
+      "contentType": "image/png",
+      "id": "063f350bdba1bdc1",
+      "kind": "image",
+      "name": "RmhAjWfL7qd3wld9yhzQ2m6W7wY%3D",
+      "path": "/var/folders/9f/28s7qvcj35l34vsgnjjt6zdw0000gn/T/browser-use/assets/d6993942-416a-40a6-b94a-9e90bec71580/063f350bdba1bdc1",
+      "url": "https://web.archive.org/web/20210918102921im_/http://id.bayan.ir/bayan/profile/avatar/RmhAjWfL7qd3wld9yhzQ2m6W7wY%3D/"
+    },
+    {
+      "contentType": "image/png",
+      "id": "50b2ed18307c87e8",
+      "kind": "image",
+      "name": "NEKzNMio0rNEgJQsLz__qUzgGJY%3D",
+      "path": "/var/folders/9f/28s7qvcj35l34vsgnjjt6zdw0000gn/T/browser-use/assets/d6993942-416a-40a6-b94a-9e90bec71580/50b2ed18307c87e8",
+      "url": "https://web.archive.org/web/20210918102921im_/http://id.bayan.ir/bayan/profile/avatar/NEKzNMio0rNEgJQsLz__qUzgGJY%3D/"
+    },
+    {
+      "contentType": "image/png",
+      "id": "a6db661a4481eb06",
+      "kind": "image",
+      "name": "NhFw9tXewBJ7Z5hgcYdzAVGEErQ%3D",
+      "path": "/var/folders/9f/28s7qvcj35l34vsgnjjt6zdw0000gn/T/browser-use/assets/d6993942-416a-40a6-b94a-9e90bec71580/a6db661a4481eb06",
+      "url": "https://web.archive.org/web/20210918102921im_/http://id.bayan.ir/bayan/profile/avatar/NhFw9tXewBJ7Z5hgcYdzAVGEErQ%3D/"
+    },
+    {
+      "contentType": "image/jpg",
+      "id": "08790339e142dc50",
+      "kind": "image",
+      "name": "1hwmk61BvfWXkzD1p67sxXpcjHM%3D",
+      "path": "/var/folders/9f/28s7qvcj35l34vsgnjjt6zdw0000gn/T/browser-use/assets/d6993942-416a-40a6-b94a-9e90bec71580/08790339e142dc50",
+      "url": "https://web.archive.org/web/20210918102921im_/http://id.bayan.ir/bayan/profile/avatar/1hwmk61BvfWXkzD1p67sxXpcjHM%3D/"
+    },
+    {
+      "contentType": "image/png",
+      "id": "cf4cc5ceb9c08f95",
+      "kind": "image",
+      "name": "C4FKYlCu0r2tVj9PPte0vM9KQ0c%3D",
+      "path": "/var/folders/9f/28s7qvcj35l34vsgnjjt6zdw0000gn/T/browser-use/assets/d6993942-416a-40a6-b94a-9e90bec71580/cf4cc5ceb9c08f95",
+      "url": "https://web.archive.org/web/20210918102921im_/http://id.bayan.ir/bayan/profile/avatar/C4FKYlCu0r2tVj9PPte0vM9KQ0c%3D/"
+    },
+    {
+      "contentType": "image/jpg",
+      "id": "a3f396537a0ec4b2",
+      "kind": "image",
+      "name": "y5K_-EPwsYWHdlaZVhAvhw5l91c%3D",
+      "path": "/var/folders/9f/28s7qvcj35l34vsgnjjt6zdw0000gn/T/browser-use/assets/d6993942-416a-40a6-b94a-9e90bec71580/a3f396537a0ec4b2",
+      "url": "https://web.archive.org/web/20210918102921im_/http://id.bayan.ir/bayan/profile/avatar/y5K_-EPwsYWHdlaZVhAvhw5l91c%3D/"
+    },
+    {
+      "contentType": "image/png",
+      "id": "078617c20291c33c",
+      "kind": "image",
+      "name": "qXo0CmFAAAKr1rni2Zq4VskTq6Y%3D",
+      "path": "/var/folders/9f/28s7qvcj35l34vsgnjjt6zdw0000gn/T/browser-use/assets/d6993942-416a-40a6-b94a-9e90bec71580/078617c20291c33c",
+      "url": "https://web.archive.org/web/20210918102921im_/http://id.bayan.ir/bayan/profile/avatar/qXo0CmFAAAKr1rni2Zq4VskTq6Y%3D/"
+    },
+    {
+      "contentType": "image/png",
+      "id": "dbec01df00910568",
+      "kind": "image",
+      "name": "kpuqmqpqatqZMDehVDprYDK62KA%3D",
+      "path": "/var/folders/9f/28s7qvcj35l34vsgnjjt6zdw0000gn/T/browser-use/assets/d6993942-416a-40a6-b94a-9e90bec71580/dbec01df00910568",
+      "url": "https://web.archive.org/web/20210918102921im_/http://id.bayan.ir/bayan/profile/avatar/kpuqmqpqatqZMDehVDprYDK62KA%3D/"
+    },
+    {
+      "contentType": "image/jpg",
+      "id": "1f5f0e2d8b4d08ff",
+      "kind": "image",
+      "name": "rUCeSfPYlWdjBHoe9gZPHNOVhSk%3D",
+      "path": "/var/folders/9f/28s7qvcj35l34vsgnjjt6zdw0000gn/T/browser-use/assets/d6993942-416a-40a6-b94a-9e90bec71580/1f5f0e2d8b4d08ff",
+      "url": "https://web.archive.org/web/20210918102921im_/http://id.bayan.ir/bayan/profile/avatar/rUCeSfPYlWdjBHoe9gZPHNOVhSk%3D/"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "19f1124f64e1b8ed",
+      "kind": "image",
+      "name": "The-Wall.jpg",
+      "path": "/var/folders/9f/28s7qvcj35l34vsgnjjt6zdw0000gn/T/browser-use/assets/d6993942-416a-40a6-b94a-9e90bec71580/19f1124f64e1b8ed.jpg",
+      "url": "https://web.archive.org/web/20210918102921im_/http://bayanbox.ir/view/7539074847322878074/The-Wall.jpg"
+    },
+    {
+      "contentType": "image/jpg",
+      "id": "b64ec64051290cde",
+      "kind": "image",
+      "name": "5rpEomxiPcw4gkswv3b9KTr93bQ%3D",
+      "path": "/var/folders/9f/28s7qvcj35l34vsgnjjt6zdw0000gn/T/browser-use/assets/d6993942-416a-40a6-b94a-9e90bec71580/b64ec64051290cde",
+      "url": "https://web.archive.org/web/20210918102921im_/http://id.bayan.ir/bayan/profile/avatar/5rpEomxiPcw4gkswv3b9KTr93bQ%3D/"
+    },
+    {
+      "contentType": "image/png",
+      "id": "1be2dab514b18049",
+      "kind": "image",
+      "name": "ZB2wTgKq-0NjY35niaB4PWIJWBM%3D",
+      "path": "/var/folders/9f/28s7qvcj35l34vsgnjjt6zdw0000gn/T/browser-use/assets/d6993942-416a-40a6-b94a-9e90bec71580/1be2dab514b18049",
+      "url": "https://web.archive.org/web/20210918102921im_/http://id.bayan.ir/bayan/profile/avatar/ZB2wTgKq-0NjY35niaB4PWIJWBM%3D/"
+    },
+    {
+      "contentType": "image/gif",
+      "id": "36dd573e8b5591f9",
+      "kind": "image",
+      "name": "cleardot.gif",
+      "path": "/var/folders/9f/28s7qvcj35l34vsgnjjt6zdw0000gn/T/browser-use/assets/d6993942-416a-40a6-b94a-9e90bec71580/36dd573e8b5591f9.gif",
+      "url": "https://web.archive.org/web/20210918102921im_/http://blog.ir/media/images/cleardot.gif"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "096566cb605d42b7",
+      "kind": "image",
+      "name": "Mad.Max.Fury.Road.2015.1080p.BluRay.x264.YIFY-117937-2016-11-30-22-49-23-2.jpg",
+      "path": "/var/folders/9f/28s7qvcj35l34vsgnjjt6zdw0000gn/T/browser-use/assets/d6993942-416a-40a6-b94a-9e90bec71580/096566cb605d42b7.jpg",
+      "url": "https://web.archive.org/web/20210918102921im_/http://bayanbox.ir/view/5035935411553261339/Mad.Max.Fury.Road.2015.1080p.BluRay.x264.YIFY-117937-2016-11-30-22-49-23-2.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "24d8b3ae17320041",
+      "kind": "image",
+      "name": "large-9dPqDVjyzcUV2CxvTpwAeGtkbZN.jpg",
+      "path": "/var/folders/9f/28s7qvcj35l34vsgnjjt6zdw0000gn/T/browser-use/assets/d6993942-416a-40a6-b94a-9e90bec71580/24d8b3ae17320041.jpg",
+      "url": "https://web.archive.org/web/20210918102921im_/http://bayanbox.ir/view/6724423508323742212/large-9dPqDVjyzcUV2CxvTpwAeGtkbZN.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "96f19433f4aa90f3",
+      "kind": "image",
+      "name": "Decaloge.jpg",
+      "path": "/var/folders/9f/28s7qvcj35l34vsgnjjt6zdw0000gn/T/browser-use/assets/d6993942-416a-40a6-b94a-9e90bec71580/96f19433f4aa90f3.jpg",
+      "url": "https://web.archive.org/web/20210918102921im_/http://bayanbox.ir/view/4950543297425783377/Decaloge.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "b64483bfb21814e3",
+      "kind": "image",
+      "name": "Vozvrashchenie-aka-The-Return-2003-1080p-x265-HEVC-RUS-ENG-SUBS-BRSHNKV-070441-2016-11-20-21-22-49-5.jpg",
+      "path": "/var/folders/9f/28s7qvcj35l34vsgnjjt6zdw0000gn/T/browser-use/assets/d6993942-416a-40a6-b94a-9e90bec71580/b64483bfb21814e3.jpg",
+      "url": "https://web.archive.org/web/20210918102921im_/http://bayanbox.ir/view/6419374331496333419/Vozvrashchenie-aka-The-Return-2003-1080p-x265-HEVC-RUS-ENG-SUBS-BRSHNKV-070441-2016-11-20-21-22-49-5.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "0a566df233b7347a",
+      "kind": "image",
+      "name": "The-Seventh-Seal.jpg",
+      "path": "/var/folders/9f/28s7qvcj35l34vsgnjjt6zdw0000gn/T/browser-use/assets/d6993942-416a-40a6-b94a-9e90bec71580/0a566df233b7347a.jpg",
+      "url": "https://web.archive.org/web/20210918102921im_/http://bayanbox.ir/view/4687107277024143221/The-Seventh-Seal.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "6b4c8280f025ba0b",
+      "kind": "image",
+      "name": "The.Fountain.2006.1080p.BluRay.x264.anoXmous-122772-2016-11-20-09-16-05-3.jpg",
+      "path": "/var/folders/9f/28s7qvcj35l34vsgnjjt6zdw0000gn/T/browser-use/assets/d6993942-416a-40a6-b94a-9e90bec71580/6b4c8280f025ba0b.jpg",
+      "url": "https://web.archive.org/web/20210918102921im_/http://bayanbox.ir/view/6036585774714511867/The.Fountain.2006.1080p.BluRay.x264.anoXmous-122772-2016-11-20-09-16-05-3.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "bd5eeb83c05fa19e",
+      "kind": "image",
+      "name": "michael-haneke-1.jpg",
+      "path": "/var/folders/9f/28s7qvcj35l34vsgnjjt6zdw0000gn/T/browser-use/assets/d6993942-416a-40a6-b94a-9e90bec71580/bd5eeb83c05fa19e.jpg",
+      "url": "https://web.archive.org/web/20210918102921im_/http://bayanbox.ir/view/9065857028799256598/michael-haneke-1.jpg"
+    },
+    {
+      "contentType": "image/png",
+      "id": "f2aaff1c9fc53921",
+      "kind": "image",
+      "name": "download_2.png",
+      "path": "/var/folders/9f/28s7qvcj35l34vsgnjjt6zdw0000gn/T/browser-use/assets/d6993942-416a-40a6-b94a-9e90bec71580/f2aaff1c9fc53921.png",
+      "url": "https://web.archive.org/web/20210918102921im_/http://bayanbox.ir/st/images/download_icon/download_2.png"
+    },
+    {
+      "contentType": "image/png",
+      "id": "6c4bc4e3cc3cf216",
+      "kind": "image",
+      "name": "header.png",
+      "path": "/var/folders/9f/28s7qvcj35l34vsgnjjt6zdw0000gn/T/browser-use/assets/d6993942-416a-40a6-b94a-9e90bec71580/6c4bc4e3cc3cf216.png",
+      "url": "https://web.archive.org/web/20181129122026im_/http://cdn.bayan.ir/blog/templates/12/header.png"
+    },
+    {
+      "contentType": "image/png",
+      "id": "a4b42799ee5e19cc",
+      "kind": "image",
+      "name": "search.png",
+      "path": "/var/folders/9f/28s7qvcj35l34vsgnjjt6zdw0000gn/T/browser-use/assets/d6993942-416a-40a6-b94a-9e90bec71580/a4b42799ee5e19cc.png",
+      "url": "https://web.archive.org/web/20210918133955im_/https://blog.ir/media/images/search.png?fYtE_X"
+    },
+    {
+      "contentType": "image/png",
+      "id": "b0cd2de54cce473e",
+      "kind": "image",
+      "name": "folder_ico.png",
+      "path": "/var/folders/9f/28s7qvcj35l34vsgnjjt6zdw0000gn/T/browser-use/assets/d6993942-416a-40a6-b94a-9e90bec71580/b0cd2de54cce473e.png",
+      "url": "https://web.archive.org/web/20181129122026im_/http://cdn.bayan.ir/blog/templates/12/folder_ico.png"
+    },
+    {
+      "contentType": "image/png",
+      "id": "a67c16e7254d9bf7",
+      "kind": "image",
+      "name": "sub_ico.png",
+      "path": "/var/folders/9f/28s7qvcj35l34vsgnjjt6zdw0000gn/T/browser-use/assets/d6993942-416a-40a6-b94a-9e90bec71580/a67c16e7254d9bf7.png",
+      "url": "https://web.archive.org/web/20181129122026im_/http://cdn.bayan.ir/blog/templates/12/sub_ico.png"
+    },
+    {
+      "contentType": "image/png",
+      "id": "594400d3edb4fa2b",
+      "kind": "image",
+      "name": "line2.png",
+      "path": "/var/folders/9f/28s7qvcj35l34vsgnjjt6zdw0000gn/T/browser-use/assets/d6993942-416a-40a6-b94a-9e90bec71580/594400d3edb4fa2b.png",
+      "url": "https://web.archive.org/web/20181129122026im_/http://cdn.bayan.ir/blog/templates/12/line2.png"
+    },
+    {
+      "contentType": "image/png",
+      "id": "b2938f025a8c9e61",
+      "kind": "image",
+      "name": "sidebar-bullet.png",
+      "path": "/var/folders/9f/28s7qvcj35l34vsgnjjt6zdw0000gn/T/browser-use/assets/d6993942-416a-40a6-b94a-9e90bec71580/b2938f025a8c9e61.png",
+      "url": "https://web.archive.org/web/20181129122026im_/http://cdn.bayan.ir/blog/templates/12/sidebar-bullet.png"
+    },
+    {
+      "contentType": "image/png",
+      "id": "fd87048c86c98ed3",
+      "kind": "image",
+      "name": "details_ico.png",
+      "path": "/var/folders/9f/28s7qvcj35l34vsgnjjt6zdw0000gn/T/browser-use/assets/d6993942-416a-40a6-b94a-9e90bec71580/fd87048c86c98ed3.png",
+      "url": "https://web.archive.org/web/20181129122026im_/http://cdn.bayan.ir/blog/templates/12/details_ico.png"
+    },
+    {
+      "contentType": "image/png",
+      "id": "e21689fc79d84d58",
+      "kind": "image",
+      "name": "rss-icon-dark.png",
+      "path": "/var/folders/9f/28s7qvcj35l34vsgnjjt6zdw0000gn/T/browser-use/assets/d6993942-416a-40a6-b94a-9e90bec71580/e21689fc79d84d58.png",
+      "url": "https://web.archive.org/web/20181129122026im_/http://cdn.bayan.ir/blog/templates/shared/icon/rss-icon-dark.png"
+    },
+    {
+      "contentType": "image/png",
+      "id": "f5f00adcd29fa733",
+      "kind": "image",
+      "name": "bayan-icon-dark.png",
+      "path": "/var/folders/9f/28s7qvcj35l34vsgnjjt6zdw0000gn/T/browser-use/assets/d6993942-416a-40a6-b94a-9e90bec71580/f5f00adcd29fa733.png",
+      "url": "https://web.archive.org/web/20181129122026im_/http://cdn.bayan.ir/blog/templates/shared/icon/bayan-icon-dark.png"
+    },
+    {
+      "contentType": "image/png",
+      "id": "a9f24c79258fc56c",
+      "kind": "image",
+      "name": "blog-icon-dark.png",
+      "path": "/var/folders/9f/28s7qvcj35l34vsgnjjt6zdw0000gn/T/browser-use/assets/d6993942-416a-40a6-b94a-9e90bec71580/a9f24c79258fc56c.png",
+      "url": "https://web.archive.org/web/20181129122026im_/http://cdn.bayan.ir/blog/templates/shared/icon/blog-icon-dark.png"
+    },
+    {
+      "contentType": "image/png",
+      "id": "eb845de8500d7f51",
+      "kind": "image",
+      "name": "templates-icon-dark.png",
+      "path": "/var/folders/9f/28s7qvcj35l34vsgnjjt6zdw0000gn/T/browser-use/assets/d6993942-416a-40a6-b94a-9e90bec71580/eb845de8500d7f51.png",
+      "url": "https://web.archive.org/web/20181129122026im_/http://cdn.bayan.ir/blog/templates/shared/icon/templates-icon-dark.png"
+    },
+    {
+      "contentType": "image/png",
+      "id": "f2c9e66cfcfea3a5",
+      "kind": "image",
+      "name": "bayanbox-icon-dark.png",
+      "path": "/var/folders/9f/28s7qvcj35l34vsgnjjt6zdw0000gn/T/browser-use/assets/d6993942-416a-40a6-b94a-9e90bec71580/f2c9e66cfcfea3a5.png",
+      "url": "https://web.archive.org/web/20181129122026im_/http://cdn.bayan.ir/blog/templates/shared/icon/bayanbox-icon-dark.png"
+    },
+    {
+      "contentType": "image/png",
+      "id": "8f987634eeb057a2",
+      "kind": "image",
+      "name": "CH-favicon.png",
+      "path": "/var/folders/9f/28s7qvcj35l34vsgnjjt6zdw0000gn/T/browser-use/assets/d6993942-416a-40a6-b94a-9e90bec71580/8f987634eeb057a2.png",
+      "url": "https://web.archive.org/web/20210918102921im_/http://bayanbox.ir/download/1355317268395477891/CH-favicon.png"
+    }
+  ],
+  "failures": [
+    {
+      "contentType": null,
+      "id": "63aa9083c21f68c4",
+      "name": "BYekan.woff",
+      "reason": "Loaded resource fetch failed: Asset bundling failed; page fetch failed: Browser Use encountered an error interacting with this webpage: Error: Asset request failed with HTTP 500\n    at wX (<anonymous>:1:102)",
+      "url": "https://web.archive.org/web/20181129122026im_/http://cdn.bayan.ir/blog/templates/shared/fonts/BYekan.woff?download"
+    },
+    {
+      "contentType": "application/x-font-woff",
+      "id": "1d316c904039c71f",
+      "name": "Entezar1-v2.0.1-0.woff",
+      "reason": "Asset response type application/x-font-woff is not valid for font",
+      "url": "https://web.archive.org/web/20181129122026im_/http://bayanbox.ir/download/1855696072375358437/Entezar1-v2.0.1-0.woff"
+    },
+    {
+      "contentType": "application/vnd.ms-fontobject",
+      "id": "1afe1753d8f6e443",
+      "name": "BNazanin.eot",
+      "reason": "Asset response type application/vnd.ms-fontobject is not valid for stylesheet",
+      "url": "https://web.archive.org/web/20181129122026im_/http://cdn.bayan.ir/blog/templates/shared/fonts/BNazanin.eot?view"
+    },
+    {
+      "contentType": null,
+      "id": "f370d21bc6da69f8",
+      "name": "0.gif",
+      "reason": "Loaded resource fetch failed: Asset bundling failed; page fetch failed: Browser Use encountered an error interacting with this webpage: TypeError: Failed to fetch\n    at t.Function.call (https://web-static.archive.org/_static/js/wombat.js?v=o9P2E1FK:21:54745)\n    at $wbwindow.fetch (https://web-static.archive.org/_static/js/wombat.js?v=o9P2E1FK:21:73310)\n    at wX (<anonymous>:1:41)\n    at <anonymous>:1:354",
+      "url": "https://athena.archive.org/0.gif?service=wb&server_name=wwwb-app253.us.archive.org&server_ms=357&kind=pageview&timediff=0&locale=en-US&referrer=-&loadtime=1086&nav_to_done_ms=2558&iaprop_fontSize=25.6px&iaprop_devicePixelRatio=1&version=2&count=13"
+    },
+    {
+      "contentType": "application/x-font-woff",
+      "id": "3f24580e35e24239",
+      "name": "BNazanin.woff",
+      "reason": "Asset response type application/x-font-woff is not valid for font",
+      "url": "https://web.archive.org/web/20181129122026im_/http://cdn.bayan.ir/blog/templates/shared/fonts/BNazanin.woff?view"
+    },
+    {
+      "contentType": null,
+      "id": "d87205595c4dcd40",
+      "name": "rb.gif",
+      "reason": "Loaded resource fetch failed: Asset bundling failed; page fetch failed: Browser Use encountered an error interacting with this webpage: Error: Asset request failed with HTTP 404\n    at wX (<anonymous>:1:102)",
+      "url": "https://web.archive.org/web/20210918133957/https://radar.bayan.ir/bl!pYsQ1PfPdAE/rb.gif?v=e"
+    }
+  ]
+}
