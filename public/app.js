@@ -43,6 +43,24 @@ const searchForm = document.querySelector("#search-form");
 const searchInput = document.querySelector("#search");
 let posts = [];
 
+function latinDigits(value = "") {
+  const digits = "۰۱۲۳۴۵۶۷۸۹٠١٢٣٤٥٦٧٨٩";
+  return String(value).replace(/[۰-۹٠-٩]/g, (digit) => String(digits.indexOf(digit) % 10));
+}
+
+function escapeHtml(value = "") {
+  return latinDigits(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function commentText(value = "") {
+  return escapeHtml(value).replace(/\n/g, "<br>");
+}
+
 function plainText(html = "") {
   return html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, " ").replace(/<[^>]*>/g, " ").replace(/&nbsp;/g, " ").replace(/\s+/g, " ").trim();
 }
@@ -77,13 +95,14 @@ function homepagePosts(items) {
 }
 
 function postDate(post) {
-  return post.detail.match(/[۰-۹]{2}\/[۰-۹]{2}\/[۰-۹]{2}/)?.[0]
+  const date = post.detail.match(/[۰-۹]{2}\/[۰-۹]{2}\/[۰-۹]{2}/)?.[0]
     || post.detail.match(/[۰-۹]{2}\s+(?:فروردین|مرداد|شهریور|آبان|آذر|دی)\s+[۰-۹]{2}(?:\s*،\s*[۰-۹:]+)?/)?.[0]
     || "";
+  return latinDigits(date);
 }
 
 function commentCount(post) {
-  return post.detail.match(/([۰-۹]+)\s*نظر/)?.[1] || "۰";
+  return String(post.comments?.length || 0);
 }
 
 function prepareBody(post, full) {
@@ -91,7 +110,7 @@ function prepareBody(post, full) {
   const safeHtml = post.bodyHtml.replace(/\s(src|srcset)=("|')([^"']*bayanbox\.ir[^"']*)\2/gi, (all, attribute, quote, url) => (
     ` data-unavailable-${attribute.toLowerCase()}=${quote}${url}${quote}`
   ));
-  wrapper.innerHTML = safeHtml;
+  wrapper.innerHTML = latinDigits(safeHtml);
   wrapper.querySelectorAll("script, form, iframe, object, embed").forEach((node) => node.remove());
   wrapper.querySelectorAll("img").forEach((image) => {
     const source = image.getAttribute("src") || "";
@@ -141,7 +160,7 @@ function renderPost(post, full = false) {
   const article = document.createElement("article");
   article.className = "post";
   article.innerHTML = `
-    <div class="title align"><h2><a href="${postUrl(post)}" data-route>${post.title}</a></h2></div>
+    <div class="title align"><h2><a href="${postUrl(post)}" data-route>${latinDigits(post.title)}</a></h2></div>
     <div class="body align"><div class="cnt${full ? "" : " post_list"}">${prepareBody(post, full)}</div></div>
     <div class="post_detail"><div class="cnt">
       <div class="det_left">
@@ -158,6 +177,37 @@ function renderPost(post, full = false) {
     }, { once: true });
   });
   return article;
+}
+
+function renderComments(post) {
+  const comments = post.comments || [];
+  const section = document.createElement("section");
+  section.id = "comments";
+  section.className = "recovered-comments";
+  section.innerHTML = `<div class="align"><div class="messages"><div class="cnt">
+    <h2>نظرات <span class="comment_count">(${comments.length})</span></h2>
+  </div></div></div>`;
+
+  comments.forEach((comment) => {
+    const item = document.createElement("div");
+    item.id = `comment-${comment.id}`;
+    item.innerHTML = `<div class="post_comments align">
+      <div class="cmt_details">
+        <span class="dets_left"><span class="inline"><span class="cmt_date">${escapeHtml(comment.date)}</span></span></span>
+        <span class="dets_right"><span class="inline txt">${escapeHtml(comment.author)}</span></span>
+      </div>
+      <div class="body_cmt"><div class="cnt"><span class="cnt_l">${commentText(comment.body)}</span></div></div>
+    </div>
+    ${comment.reply ? `<div class="align"><div class="cmt_reply">پاسخ:<br>${commentText(comment.reply)}</div></div>` : ""}
+    <div class="cmt_break"></div>`;
+    section.append(item);
+  });
+
+  const disabled = document.createElement("div");
+  disabled.className = "commenting-disabled align";
+  disabled.textContent = "ارسال نظر غیرفعال است.";
+  section.append(disabled);
+  return section;
 }
 
 function renderList(items, page = 1) {
@@ -196,13 +246,13 @@ function renderList(items, page = 1) {
 }
 
 function renderAbout() {
-  content.innerHTML = `<article class="post">
+  content.innerHTML = latinDigits(`<article class="post">
     <div class="title align"><h2><a>درباره ما</a></h2></div>
     <div class="body align"><div class="cnt">
       <p>گروه سینماحلّی در سال ۱۳۹۴ تشکیل شد. این گروه کار خود را ابتدا با نمایش و نقد فیلم‌ها آغاز کرد. گروهی که اوّلین خروجی رسمی خود را در نمایشگاه دست‌آوردهای دانش‌آموزی راهنمایی علّامه حلّی (۱) دید و توانست در همین نمایشگاه به سرعت به یک غرفهٔ محبوب تبدیل شود. گروه کم‌کم سعی کرد فعالّیت‌های خود را گسترش دهد و در تابستان سال ۱۳۹۵ نخستین کار کوتاه سینمایی خود را با نام «آزادی در زندان» ساخت.</p>
       <p>وبلاگ سینماحلّی نیز در راستای فعالّیت‌های گروه شکل گرفت. بخش‌هایی چون معرفی فیلم، معرفی کتاب، نقد و نمای روز در تلاش هستند که فیلم‌ها و کتاب‌های مرتبط با فیلم و سینما را به شما معرفی کنند و بخش گالری دست‌آورد‌های گروه سینماحلّی است.</p>
     </div></div>
-  </article>`;
+  </article>`);
 }
 
 function setSelectedMenu() {
@@ -222,8 +272,8 @@ function route() {
     const post = posts.find((item) => item.id === postId);
     if (!post || unavailableImageOnly(post)) renderList([]);
     else {
-      document.title = `${post.title} :: سینما حلّی`;
-      content.replaceChildren(renderPost(post, true));
+      document.title = `${latinDigits(post.title)} :: سینما حلّی`;
+      content.replaceChildren(renderPost(post, true), renderComments(post));
     }
   } else if (path.startsWith("/page/about-me")) {
     document.title = "درباره ما :: سینما حلّی";

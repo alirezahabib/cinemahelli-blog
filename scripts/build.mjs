@@ -5,6 +5,8 @@ const root = process.cwd();
 const publicDir = path.join(root, "public");
 const archiveDir = path.join(root, "archive");
 const source = JSON.parse(await readFile(path.join(archiveDir, "source", "posts.json"), "utf8"));
+const commentSource = JSON.parse(await readFile(path.join(archiveDir, "source", "comments.json"), "utf8"));
+const commentsByPost = new Map(commentSource.posts.map((post) => [post.postId, post.comments]));
 
 function archiveOriginal(value = "") {
   const decoded = value.replace(/^\/\//, "https://");
@@ -166,6 +168,7 @@ const posts = source.posts.map((post) => {
   return {
     ...post,
     author: authorFor(post),
+    comments: commentsByPost.get(post.id) || [],
     category: categoryFor(post.id),
     bodyHtml: bodyFor(post),
     images,
