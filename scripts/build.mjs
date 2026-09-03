@@ -47,8 +47,20 @@ for (const manifestPath of manifests) {
   }
 }
 
+const localAttachments = new Map([
+  [
+    resourceKey("http://bayanbox.ir/view/3794612651311894150/%DA%A9%D8%A7%D8%B1%DA%AF%D8%B1%D8%AF%D8%A7%D9%86-%D9%87%D8%A7%DB%8C-%D8%A8%D8%B1%D8%AA%D8%B1-%D9%85%DB%8C%D8%B4%D8%A7%D8%A6%DB%8C%D9%84-%D9%87%D8%A7%D9%86%DA%A9%D9%87.pdf"),
+    "/files/michael-haneke.pdf",
+  ],
+  [
+    resourceKey("http://bayanbox.ir/view/810997987145321501/%D9%86%D9%82%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D8%AC%D9%84%D8%B3%D9%87-1.pdf"),
+    "/files/session-1-film-review.pdf",
+  ],
+]);
+
 function localPath(url) {
-  return localAssets.get(resourceKey(url)) || null;
+  const key = resourceKey(url);
+  return localAssets.get(key) || localAttachments.get(key) || null;
 }
 
 function cleanBody(html = "") {
@@ -60,6 +72,10 @@ function cleanBody(html = "") {
   clean = clean.replace(/\b(src|href)=("|')([^"']+)\2/gi, (all, attr, quote, url) => {
     const local = localPath(url);
     if (local) return `${attr}=${quote}${local}${quote}`;
+
+    if (attr.toLowerCase() === "src" && /bayanbox\.ir/i.test(url)) {
+      return `data-unavailable-src=${quote}${url}${quote}`;
+    }
 
     const internal = url.match(/^(?:https?:\/\/web\.archive\.org)?\/web\/\d+(?:[a-z_]+)?\/https?:\/\/cinemahelli\.ir(?::80)?(\/[^"']*)$/i);
     if (internal) return `${attr}=${quote}${internal[1]}${quote}`;
@@ -116,7 +132,7 @@ const posts = source.posts.map((post) => {
       postId: post.id,
       originalUrl,
       archiveUrl: `https://web.archive.org/web/20210918102921/${originalUrl}`,
-      localPath: null,
+      localPath: localPath(originalUrl),
     });
   }
   return {

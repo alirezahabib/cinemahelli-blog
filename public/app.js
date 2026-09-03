@@ -79,7 +79,10 @@ function commentCount(post) {
 
 function prepareBody(post, full) {
   const wrapper = document.createElement("div");
-  wrapper.innerHTML = post.bodyHtml;
+  const safeHtml = post.bodyHtml.replace(/\s(src|srcset)=("|')([^"']*bayanbox\.ir[^"']*)\2/gi, (all, attribute, quote, url) => (
+    ` data-unavailable-${attribute.toLowerCase()}=${quote}${url}${quote}`
+  ));
+  wrapper.innerHTML = safeHtml;
   wrapper.querySelectorAll("script, form, iframe, object, embed").forEach((node) => node.remove());
   wrapper.querySelectorAll("img").forEach((image) => {
     const source = image.getAttribute("src") || "";
