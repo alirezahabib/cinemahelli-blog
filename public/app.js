@@ -26,7 +26,7 @@ const authorRoutes = {
   "mohammad-abbasi": "محمّد عبّاسی",
 };
 
-const homepageOrder = [8, 46, 6, 5, 40, 38, 49, 7, 50, 52];
+const homepageOrder = [8, 46, 39, 6, 5, 40, 38, 49, 7, 50, 52];
 
 const archiveTokens = {
   "1397/1": ["۹۷/۰۱", "فروردین ۹۷"],
@@ -164,7 +164,7 @@ function renderPost(post, full = false) {
     <div class="body align"><div class="cnt${full ? "" : " post_list"}">${prepareBody(post, full)}</div></div>
     <div class="post_detail"><div class="cnt">
       <div class="det_left">
-        <span class="inline"><span class="cmt">${commentCount(post)}&nbsp;نظر</span></span>
+        <span class="inline"><a class="cmt" href="${postUrl(post)}#comments" data-route>${commentCount(post)}&nbsp;نظر</a></span>
         <span class="inline"><span class="date">${postDate(post)}</span></span>
       </div>
       <div class="det_right"><span class="author2">${postAuthor(post)}</span></div>
@@ -261,6 +261,17 @@ function setSelectedMenu() {
   });
 }
 
+function scrollToRouteTarget() {
+  const hash = location.hash.replace(/^#/, "");
+  let id = hash;
+  try { id = decodeURIComponent(hash); } catch { /* Keep malformed hashes inert. */ }
+  const target = id ? document.getElementById(id) : null;
+  requestAnimationFrame(() => {
+    if (target) target.scrollIntoView({ block: "start" });
+    else window.scrollTo(0, 0);
+  });
+}
+
 function route() {
   const path = decodeURIComponent(location.pathname);
   const page = Number(new URL(location.href).searchParams.get("page")) || 1;
@@ -292,7 +303,7 @@ function route() {
     document.title = "سینما حلّی";
     renderList(homepagePosts(visible), page);
   }
-  window.scrollTo(0, 0);
+  scrollToRouteTarget();
 }
 
 function renderCategories() {
