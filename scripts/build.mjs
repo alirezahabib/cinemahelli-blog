@@ -24,6 +24,16 @@ function resourceKey(value = "") {
   }
 }
 
+function bayanboxFileId(value = "") {
+  try {
+    const url = new URL(archiveOriginal(value));
+    if (!/(?:^|\.)bayanbox\.ir$/i.test(url.hostname)) return null;
+    return url.pathname.match(/^\/(?:view|info|download)\/(\d+)(?:\/|$)/i)?.[1] || null;
+  } catch {
+    return null;
+  }
+}
+
 async function findManifests(dir) {
   const found = [];
   for (const entry of await readdir(dir, { withFileTypes: true })) {
@@ -36,6 +46,7 @@ async function findManifests(dir) {
 
 const manifests = await findManifests(path.join(publicDir, "assets"));
 const localAssets = new Map();
+const localBayanboxAssets = new Map();
 
 for (const manifestPath of manifests) {
   const manifest = JSON.parse(await readFile(manifestPath, "utf8"));
@@ -44,6 +55,8 @@ for (const manifestPath of manifests) {
     const basename = path.basename(asset.path);
     const relative = `/${path.posix.join(relativeDir.split(path.sep).join("/"), basename)}`;
     localAssets.set(resourceKey(asset.url), relative);
+    const fileId = bayanboxFileId(asset.url);
+    if (fileId) localBayanboxAssets.set(fileId, relative);
   }
 }
 
@@ -60,7 +73,11 @@ const localAttachments = new Map([
 
 function localPath(url) {
   const key = resourceKey(url);
-  return localAssets.get(key) || localAttachments.get(key) || null;
+  const fileId = bayanboxFileId(url);
+  return localAssets.get(key)
+    || localAttachments.get(key)
+    || (fileId ? localBayanboxAssets.get(fileId) : null)
+    || null;
 }
 
 function cleanBody(html = "") {
@@ -80,9 +97,9 @@ function cleanBody(html = "") {
     const internal = url.match(/^(?:https?:\/\/web\.archive\.org)?\/web\/\d+(?:[a-z_]+)?\/https?:\/\/cinemahelli\.ir(?::80)?(\/[^"']*)$/i);
     if (internal) return `${attr}=${quote}${internal[1]}${quote}`;
 
-    if (attr.toLowerCase() === "href" && /bayanbox\.ir\/(?:download|view)\/.*\.pdf(?:[?#].*)?$/i.test(url)) {
+    if (attr.toLowerCase() === "href" && /bayanbox\.ir/i.test(archiveOriginal(url))) {
       const original = archiveOriginal(url);
-      return `${attr}=${quote}https://web.archive.org/web/20210918102921/${original}${quote}`;
+      return `${attr}=${quote}${original}${quote}`;
     }
     return all;
   });
