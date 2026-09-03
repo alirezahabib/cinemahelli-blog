@@ -23,7 +23,10 @@ const authorRoutes = {
   N9HDt4eq1II: "سروش شهبازی",
   "-LTsnNt0RVE": "Ha di!",
   "7xABrqRo-90": "آقای طاهری",
+  "mohammad-abbasi": "محمّد عبّاسی",
 };
+
+const homepageOrder = [8, 6, 5, 46, 40, 38, 49, 7, 50, 52];
 
 const archiveTokens = {
   "1397/1": ["۹۷/۰۱", "فروردین ۹۷"],
@@ -54,7 +57,14 @@ function postUrl(post) {
 }
 
 function postAuthor(post) {
-  return Object.values(authorRoutes).find((name) => post.detail.includes(name)) || "";
+  return post.author || "";
+}
+
+function homepagePosts(items) {
+  const byId = new Map(items.map((post) => [post.id, post]));
+  const featured = homepageOrder.map((id) => byId.get(id)).filter(Boolean);
+  const featuredIds = new Set(homepageOrder);
+  return [...featured, ...items.filter((post) => !featuredIds.has(post.id))];
 }
 
 function postDate(post) {
@@ -215,10 +225,10 @@ function route() {
     renderList(visible.filter((post) => tokens.some((token) => post.detail.includes(token))), page);
   } else if (path.startsWith("/by_author/")) {
     const author = authorRoutes[path.split("/").filter(Boolean)[1]];
-    renderList(author ? visible.filter((post) => post.detail.includes(author)) : [], page);
+    renderList(author ? visible.filter((post) => post.author === author) : [], page);
   } else {
     document.title = "سینما حلّی";
-    renderList(visible, page);
+    renderList(homepagePosts(visible), page);
   }
   window.scrollTo(0, 0);
 }

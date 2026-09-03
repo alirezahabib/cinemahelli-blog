@@ -88,6 +88,18 @@ function categoryFor(id) {
   return "frames";
 }
 
+const knownAuthors = [
+  "علیرضا حبیب زاده",
+  "سروش شهبازی",
+  "Ha di!",
+  "آقای طاهری",
+];
+
+function authorFor(post) {
+  if (post.bodyHtml.includes("محمّد عبّاسی")) return "محمّد عبّاسی";
+  return knownAuthors.find((author) => post.detail.includes(author)) || "";
+}
+
 const recovered = [];
 const unavailable = [];
 const linkedAttachments = new Map();
@@ -109,6 +121,7 @@ const posts = source.posts.map((post) => {
   }
   return {
     ...post,
+    author: authorFor(post),
     category: categoryFor(post.id),
     bodyHtml: cleanBody(post.bodyHtml),
     images,
