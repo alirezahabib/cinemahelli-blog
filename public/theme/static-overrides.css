@@ -69,7 +69,8 @@
 
 .external-link-icon {
   display: inline-block;
-  margin-right: 4px;
+  margin-right: 0;
+  margin-left: 4px;
   font: bold 11px/1 Arial, sans-serif;
 }
 
@@ -160,15 +161,15 @@
 #search-form .text::placeholder { color: #666; opacity: 1; }
 #search-form .submit {
   position: absolute;
-  left: 1px;
-  top: 1px;
+  left: 0;
+  top: 0;
   width: 35px;
   height: 30px;
   border: 0;
   background-color: #ff8f00;
   background-image: url("/theme/images/search.png");
   background-repeat: no-repeat;
-  background-position: center -2px;
+  background-position: center;
   cursor: pointer;
 }
 #search-form .submit:hover,
