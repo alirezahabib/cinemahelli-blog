@@ -46,6 +46,7 @@ const persianMonths = [
 const content = document.querySelector("#content");
 const searchForm = document.querySelector("#search-form");
 const searchInput = document.querySelector("#search");
+const defaultDescription = "وبسایتی برای علاقه‌مندان به سینما";
 let posts = [];
 
 function latinDigits(value = "") {
@@ -68,6 +69,19 @@ function commentText(value = "") {
 
 function plainText(html = "") {
   return html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, " ").replace(/<[^>]*>/g, " ").replace(/&nbsp;/g, " ").replace(/\s+/g, " ").trim();
+}
+
+function updatePageMeta(title, description = defaultDescription) {
+  document.title = title;
+  document.querySelector('meta[name="description"]')?.setAttribute("content", description);
+
+  let canonical = document.querySelector('link[rel="canonical"]');
+  if (!canonical) {
+    canonical = document.createElement("link");
+    canonical.rel = "canonical";
+    document.head.append(canonical);
+  }
+  canonical.href = `${location.origin}${location.pathname}${location.search}`;
 }
 
 function unavailableImageOnly(post) {
@@ -301,26 +315,35 @@ function route() {
 
   if (postId) {
     const post = posts.find((item) => item.id === postId);
-    if (!post || unavailableImageOnly(post)) renderList([]);
+    if (!post || unavailableImageOnly(post)) {
+      updatePageMeta("مطلب در دسترس نیست :: سینما حلّی");
+      renderList([]);
+    }
     else {
-      document.title = `${latinDigits(post.title)} :: سینما حلّی`;
+      updatePageMeta(
+        `${latinDigits(post.title)} :: سینما حلّی`,
+        plainText(post.bodyHtml).slice(0, 160) || defaultDescription,
+      );
       content.replaceChildren(renderPost(post, true), renderComments(post));
     }
   } else if (path.startsWith("/page/about-me")) {
-    document.title = "درباره ما :: سینما حلّی";
+    updatePageMeta("درباره ما :: سینما حلّی");
     renderAbout();
   } else if (path.startsWith("/category/")) {
     const key = categorySlugs[path.split("/").filter(Boolean)[1]];
+    updatePageMeta(`${categoryLabels[key] || "مطالب"} :: سینما حلّی`);
     renderList(key ? visible.filter((post) => post.category === key) : visible, page);
   } else if (path.startsWith("/archive/")) {
     const parts = path.split("/").filter(Boolean);
     const tokens = archiveTokens[`${parts[1]}/${parts[2]}`] || [];
+    updatePageMeta(`بایگانی ${latinDigits(tokens[1] || "مطالب")} :: سینما حلّی`);
     renderList(visible.filter((post) => tokens.some((token) => post.detail.includes(token))), page);
   } else if (path.startsWith("/by_author/")) {
     const author = authorRoutes[path.split("/").filter(Boolean)[1]];
+    updatePageMeta(`${author || "نویسندگان"} :: سینما حلّی`);
     renderList(author ? visible.filter((post) => post.author === author) : [], page);
   } else {
-    document.title = "سینما حلّی";
+    updatePageMeta("سینما حلّی");
     renderList(homepagePosts(visible), page);
   }
   scrollToRouteTarget();

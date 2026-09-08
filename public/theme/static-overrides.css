@@ -83,7 +83,7 @@
 
 #wrp .box1 .bx_center .post {
   position: relative;
-  margin-bottom: 36px;
+  margin-bottom: 32px;
   border-radius: 0;
   background: linear-gradient(to bottom, #0c0c0c, #030303 72%);
 }
@@ -102,28 +102,6 @@
   border-radius: 0;
   background: #1a1a1a;
   box-shadow: none;
-}
-
-#wrp .box1 .bx_center .post .post_detail::before,
-#wrp .box1 .bx_center .post .post_detail::after {
-  position: absolute;
-  z-index: 2;
-  bottom: -3px;
-  width: 20px;
-  height: 4px;
-  background: #050505;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, .42);
-  content: "";
-  pointer-events: none;
-  transform: rotate(-3deg);
-}
-
-#wrp .box1 .bx_center .post .post_detail::before {
-  right: -20px;
-}
-
-#wrp .box1 .bx_center .post .post_detail::after {
-  left: -20px;
 }
 
 #wrp .main_menu {
@@ -211,7 +189,7 @@
   }
 
   #wrp .box1 .bx_center .post {
-    margin-bottom: 30px;
+    margin-bottom: 26px;
   }
 
   #wrp .box1 .bx_center .post::before {
@@ -219,19 +197,6 @@
   }
 
   #wrp .box1 .bx_center .post::after {
-    left: -10px;
-  }
-
-  #wrp .box1 .bx_center .post .post_detail::before,
-  #wrp .box1 .bx_center .post .post_detail::after {
-    width: 10px;
-  }
-
-  #wrp .box1 .bx_center .post .post_detail::before {
-    right: -10px;
-  }
-
-  #wrp .box1 .bx_center .post .post_detail::after {
     left: -10px;
   }
 

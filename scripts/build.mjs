@@ -258,14 +258,31 @@ await writeFile(path.join(publicDir, "rss.xml"), `<?xml version="1.0" encoding="
   <description>سرآغازی برای ساخت فیلم</description>${rssItems}
 </channel></rss>\n`);
 
-const sitemapEntries = [
-  "<url><loc>https://cinemahelli.ir/</loc></url>",
-  "<url><loc>https://cinemahelli.ir/page/about-me</loc></url>",
+const sitemapPaths = [
+  "/",
+  "/page/about-me",
+  ...[
+    "مکتب-خانه",
+    "نقد",
+    "قاب-های-به-یاد-ماندنی",
+    "معرفی-فیلم",
+    "جلسات-و-نشست-های-عمومی",
+    "گالری",
+    "فیلمسازان-برتر",
+  ].map((slug) => `/category/${encodeURIComponent(slug)}/`),
+  ...["lrageTUqBgc", "N9HDt4eq1II", "-LTsnNt0RVE", "7xABrqRo-90", "mohammad-abbasi"]
+    .map((author) => `/by_author/${author}`),
+  ...["1397/1", "1396/8", "1395/10", "1395/9", "1395/8", "1395/6", "1395/5"]
+    .map((archive) => `/archive/${archive}/`),
   ...publishedPosts.map((post) => {
     const suffix = post.archiveUrl.match(/\/post\/\d+\/(.*)$/)?.[1]?.replace(/[?#].*$/, "") || "";
-    return `<url><loc>${xml(`https://cinemahelli.ir/post/${post.id}/${suffix}`)}</loc></url>`;
+    return `/post/${post.id}/${suffix}`;
   }),
 ];
+
+const sitemapEntries = sitemapPaths.map((pathname) => (
+  `<url><loc>${xml(new URL(pathname, "https://cinemahelli.ir").href)}</loc></url>`
+));
 
 await writeFile(path.join(publicDir, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${sitemapEntries.join("")}</urlset>\n`);
