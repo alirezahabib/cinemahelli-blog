@@ -37,6 +37,53 @@
 #wrp .header .title_desc h1 { margin-bottom: 6px; }
 #wrp .header .title_desc .desc h2 { margin-top: 0; }
 
+/* Continue the header's film strip down both edges of the post stream. */
+#wrp .box1 .bx_center {
+  position: relative;
+  display: flow-root;
+  box-sizing: border-box;
+  padding-right: 27px;
+  padding-bottom: 20px;
+  padding-left: 27px;
+}
+
+#wrp .box1 .bx_center::before,
+#wrp .box1 .bx_center::after {
+  position: absolute;
+  z-index: 0;
+  top: -25px;
+  bottom: 0;
+  width: 20px;
+  box-sizing: border-box;
+  background-color: #f1f1ee;
+  background-image:
+    linear-gradient(to bottom, #050505 0 8px, transparent 8px 16px),
+    linear-gradient(to right, rgba(0, 0, 0, .12), transparent 35%, transparent 65%, rgba(0, 0, 0, .12));
+  background-position: center 4px, center;
+  background-repeat: repeat-y, no-repeat;
+  background-size: 10px 16px, 100% 100%;
+  box-shadow: 0 0 12px rgba(0, 0, 0, .8), inset 0 0 0 1px rgba(0, 0, 0, .18);
+  content: "";
+  pointer-events: none;
+}
+
+#wrp .box1 .bx_center::before {
+  right: 0;
+  border-left: 1px solid rgba(255, 143, 0, .7);
+  border-radius: 0 0 0 4px;
+}
+
+#wrp .box1 .bx_center::after {
+  left: 0;
+  border-right: 1px solid rgba(255, 143, 0, .7);
+  border-radius: 0 0 4px 0;
+}
+
+#wrp .box1 .bx_center .mod_center {
+  position: relative;
+  z-index: 1;
+}
+
 #wrp .main_menu {
   height: auto;
   min-height: 40px;
@@ -109,6 +156,17 @@
     width: 100%;
     min-width: 0;
     margin-left: 0;
+    padding-right: 15px;
+    padding-bottom: 14px;
+    padding-left: 15px;
+  }
+
+  #wrp .box1 .bx_center::before,
+  #wrp .box1 .bx_center::after {
+    top: -12px;
+    width: 10px;
+    background-position: center 3px, center;
+    background-size: 5px 12px, 100% 100%;
   }
 
   #wrp .box1 .bx_left {
