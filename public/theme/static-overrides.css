@@ -51,17 +51,18 @@
 #wrp .box1 .bx_center::after {
   position: absolute;
   z-index: 0;
-  top: -25px;
+  top: 0;
   bottom: 0;
   width: 20px;
   box-sizing: border-box;
   background-color: #f1f1ee;
   background-image:
-    linear-gradient(to bottom, #050505 0 8px, transparent 8px 16px),
+    url("/theme/images/film-perforation.svg"),
     linear-gradient(to right, rgba(0, 0, 0, .12), transparent 35%, transparent 65%, rgba(0, 0, 0, .12));
-  background-position: center 4px, center;
+  background-position: center top, center;
   background-repeat: repeat-y, no-repeat;
   background-size: 10px 16px, 100% 100%;
+  border-radius: 4px;
   box-shadow: 0 0 12px rgba(0, 0, 0, .8), inset 0 0 0 1px rgba(0, 0, 0, .18);
   content: "";
   pointer-events: none;
@@ -70,18 +71,37 @@
 #wrp .box1 .bx_center::before {
   right: 0;
   border-left: 1px solid rgba(255, 143, 0, .7);
-  border-radius: 0 0 0 4px;
 }
 
 #wrp .box1 .bx_center::after {
   left: 0;
   border-right: 1px solid rgba(255, 143, 0, .7);
-  border-radius: 0 0 4px 0;
 }
 
 #wrp .box1 .bx_center .mod_center {
   position: relative;
   z-index: 1;
+}
+
+#wrp .box1 .bx_center .post {
+  margin-bottom: 26px;
+  border-radius: 4px;
+  background: linear-gradient(to bottom, #0c0c0c, #030303 72%);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .055);
+}
+
+#wrp .box1 .bx_center .post .body {
+  margin-bottom: 4px;
+}
+
+#wrp .box1 .bx_center .post .post_detail {
+  position: relative;
+  margin-right: -7px;
+  margin-left: -7px;
+  border-color: #3d3d3d;
+  border-radius: 2px;
+  background: linear-gradient(to bottom, #242424, #141414);
+  box-shadow: 0 -1px 0 rgba(255, 143, 0, .45), 0 7px 14px rgba(0, 0, 0, .75);
 }
 
 #wrp .main_menu {
@@ -163,10 +183,18 @@
 
   #wrp .box1 .bx_center::before,
   #wrp .box1 .bx_center::after {
-    top: -12px;
     width: 10px;
-    background-position: center 3px, center;
+    background-position: center top, center;
     background-size: 5px 12px, 100% 100%;
+  }
+
+  #wrp .box1 .bx_center .post {
+    margin-bottom: 22px;
+  }
+
+  #wrp .box1 .bx_center .post .post_detail {
+    margin-right: -5px;
+    margin-left: -5px;
   }
 
   #wrp .box1 .bx_left {
