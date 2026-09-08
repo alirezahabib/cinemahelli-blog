@@ -167,6 +167,7 @@ const posts = source.posts.map((post) => {
   }
   return {
     ...post,
+    title: post.title.replace(/^™\s*/, ""),
     author: authorFor(post),
     comments: commentsByPost.get(post.id) || [],
     category: categoryFor(post.id),

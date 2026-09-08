@@ -37,6 +37,42 @@
 #wrp .header .title_desc h1 { margin-bottom: 6px; }
 #wrp .header .title_desc .desc h2 { margin-top: 0; }
 
+#wrp .main_menu {
+  height: auto;
+  min-height: 40px;
+}
+
+#wrp .main_menu .cnt {
+  padding-bottom: 8px;
+}
+
+#wrp .main_menu .cnt ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 3px;
+}
+
+#wrp .main_menu .cnt li {
+  float: none;
+  margin-left: 0;
+}
+
+#wrp .main_menu .cnt a.youtube-link {
+  color: #fff;
+  background: #f00;
+}
+
+#wrp .main_menu .cnt a.youtube-link:hover {
+  color: #fff;
+  background: #c00;
+}
+
+.external-link-icon {
+  display: inline-block;
+  margin-right: 4px;
+  font: bold 11px/1 Arial, sans-serif;
+}
+
 @media screen and (max-width: 767px) {
   body {
     overflow-x: hidden;
@@ -47,26 +83,6 @@
     box-sizing: border-box;
     width: 100%;
     padding: 0 8px;
-  }
-
-  #wrp .main_menu {
-    height: auto;
-    min-height: 40px;
-  }
-
-  #wrp .main_menu .cnt {
-    padding-bottom: 8px;
-  }
-
-  #wrp .main_menu .cnt ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px 3px;
-  }
-
-  #wrp .main_menu .cnt li {
-    float: none;
-    margin-left: 0;
   }
 
   #wrp .header {
@@ -121,19 +137,39 @@
   }
 }
 
-#search-form { position: relative; margin: 5px; }
-#search-form .search-wrapper { margin-left: 34px; }
-#search-form .text { box-sizing: border-box; width: 100%; height: 30px; }
+#search-form {
+  position: relative;
+  box-sizing: border-box;
+  height: 32px;
+  margin: 5px;
+  overflow: hidden;
+  border: 1px solid #777;
+  border-radius: 4px;
+  background: #fff;
+}
+#search-form .search-wrapper { margin-left: 35px; }
+#search-form .text {
+  box-sizing: border-box;
+  width: 100%;
+  height: 30px;
+  padding: 0 8px;
+  color: #222;
+  background: #fff;
+  font-family: yekan, Verdana, sans-serif;
+}
+#search-form .text::placeholder { color: #666; opacity: 1; }
 #search-form .submit {
   position: absolute;
-  left: 0;
-  top: 0;
+  left: 1px;
+  top: 1px;
   width: 35px;
   height: 30px;
   border: 0;
-  background: #bdc2ca url("/theme/images/search.png") no-repeat center;
+  background: #ff8f00 url("/theme/images/search.png") no-repeat center;
   cursor: pointer;
 }
+#search-form .submit:hover,
+#search-form .submit:focus { background-color: #d97800; }
 
 #wrp .main_menu .cnt a { padding-right: 8px; padding-left: 8px; }
 #wrp .box1 .bx_center .pagination a.selected { background: #ff8f00; border-color: #ff8f00; color: #fff; }
