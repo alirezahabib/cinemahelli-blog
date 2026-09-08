@@ -37,7 +37,7 @@
 #wrp .header .title_desc h1 { margin-bottom: 6px; }
 #wrp .header .title_desc .desc h2 { margin-top: 0; }
 
-/* Continue the header's film strip down both edges of the post stream. */
+/* Give each post its own short section of film. */
 #wrp .box1 .bx_center {
   position: relative;
   display: flow-root;
@@ -47,8 +47,8 @@
   padding-left: 20px;
 }
 
-#wrp .box1 .bx_center::before,
-#wrp .box1 .bx_center::after {
+#wrp .box1 .bx_center .post::before,
+#wrp .box1 .bx_center .post::after {
   position: absolute;
   z-index: 0;
   top: 0;
@@ -68,12 +68,12 @@
   pointer-events: none;
 }
 
-#wrp .box1 .bx_center::before {
-  right: 0;
+#wrp .box1 .bx_center .post::before {
+  right: -20px;
 }
 
-#wrp .box1 .bx_center::after {
-  left: 0;
+#wrp .box1 .bx_center .post::after {
+  left: -20px;
 }
 
 #wrp .box1 .bx_center .mod_center {
@@ -82,7 +82,8 @@
 }
 
 #wrp .box1 .bx_center .post {
-  margin-bottom: 26px;
+  position: relative;
+  margin-bottom: 36px;
   border-radius: 0;
   background: linear-gradient(to bottom, #0c0c0c, #030303 72%);
 }
@@ -107,7 +108,7 @@
 #wrp .box1 .bx_center .post .post_detail::after {
   position: absolute;
   z-index: 2;
-  top: -3px;
+  bottom: -3px;
   width: 20px;
   height: 4px;
   background: #050505;
@@ -202,15 +203,23 @@
     padding-left: 10px;
   }
 
-  #wrp .box1 .bx_center::before,
-  #wrp .box1 .bx_center::after {
+  #wrp .box1 .bx_center .post::before,
+  #wrp .box1 .bx_center .post::after {
     width: 10px;
     background-position: center top, center;
     background-size: 5px 12px, 100% 100%;
   }
 
   #wrp .box1 .bx_center .post {
-    margin-bottom: 22px;
+    margin-bottom: 30px;
+  }
+
+  #wrp .box1 .bx_center .post::before {
+    right: -10px;
+  }
+
+  #wrp .box1 .bx_center .post::after {
+    left: -10px;
   }
 
   #wrp .box1 .bx_center .post .post_detail::before,
