@@ -42,9 +42,9 @@
   position: relative;
   display: flow-root;
   box-sizing: border-box;
-  padding-right: 27px;
+  padding-right: 20px;
   padding-bottom: 20px;
-  padding-left: 27px;
+  padding-left: 20px;
 }
 
 #wrp .box1 .bx_center::before,
@@ -70,12 +70,10 @@
 
 #wrp .box1 .bx_center::before {
   right: 0;
-  border-left: 1px solid rgba(255, 143, 0, .7);
 }
 
 #wrp .box1 .bx_center::after {
   left: 0;
-  border-right: 1px solid rgba(255, 143, 0, .7);
 }
 
 #wrp .box1 .bx_center .mod_center {
@@ -85,9 +83,8 @@
 
 #wrp .box1 .bx_center .post {
   margin-bottom: 26px;
-  border-radius: 4px;
+  border-radius: 0;
   background: linear-gradient(to bottom, #0c0c0c, #030303 72%);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .055);
 }
 
 #wrp .box1 .bx_center .post .body {
@@ -96,12 +93,36 @@
 
 #wrp .box1 .bx_center .post .post_detail {
   position: relative;
-  margin-right: -7px;
-  margin-left: -7px;
-  border-color: #3d3d3d;
-  border-radius: 2px;
-  background: linear-gradient(to bottom, #242424, #141414);
-  box-shadow: 0 -1px 0 rgba(255, 143, 0, .45), 0 7px 14px rgba(0, 0, 0, .75);
+  margin-right: 0;
+  margin-left: 0;
+  border-right: 0;
+  border-left: 0;
+  border-color: #333;
+  border-radius: 0;
+  background: #1a1a1a;
+  box-shadow: none;
+}
+
+#wrp .box1 .bx_center .post .post_detail::before,
+#wrp .box1 .bx_center .post .post_detail::after {
+  position: absolute;
+  z-index: 2;
+  top: -3px;
+  width: 20px;
+  height: 4px;
+  background: #050505;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, .42);
+  content: "";
+  pointer-events: none;
+  transform: rotate(-3deg);
+}
+
+#wrp .box1 .bx_center .post .post_detail::before {
+  right: -20px;
+}
+
+#wrp .box1 .bx_center .post .post_detail::after {
+  left: -20px;
 }
 
 #wrp .main_menu {
@@ -176,9 +197,9 @@
     width: 100%;
     min-width: 0;
     margin-left: 0;
-    padding-right: 15px;
+    padding-right: 10px;
     padding-bottom: 14px;
-    padding-left: 15px;
+    padding-left: 10px;
   }
 
   #wrp .box1 .bx_center::before,
@@ -192,9 +213,17 @@
     margin-bottom: 22px;
   }
 
-  #wrp .box1 .bx_center .post .post_detail {
-    margin-right: -5px;
-    margin-left: -5px;
+  #wrp .box1 .bx_center .post .post_detail::before,
+  #wrp .box1 .bx_center .post .post_detail::after {
+    width: 10px;
+  }
+
+  #wrp .box1 .bx_center .post .post_detail::before {
+    right: -10px;
+  }
+
+  #wrp .box1 .bx_center .post .post_detail::after {
+    left: -10px;
   }
 
   #wrp .box1 .bx_left {
