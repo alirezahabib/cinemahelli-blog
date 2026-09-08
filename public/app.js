@@ -38,6 +38,11 @@ const archiveTokens = {
   "1395/5": ["۹۵/۰۵", "مرداد ۹۵"],
 };
 
+const persianMonths = [
+  "فروردین", "اردیبهشت", "خرداد", "تیر", "مرداد", "شهریور",
+  "مهر", "آبان", "آذر", "دی", "بهمن", "اسفند",
+];
+
 const content = document.querySelector("#content");
 const searchForm = document.querySelector("#search-form");
 const searchInput = document.querySelector("#search");
@@ -94,11 +99,26 @@ function homepagePosts(items) {
   return [...featured, ...items.filter((post) => !featuredIds.has(post.id))];
 }
 
+function formatNamedDate(value = "") {
+  const normalized = latinDigits(value).replace(/\s*،\s*/g, "، ").trim();
+  const match = normalized.match(/^0?(\d{1,2})\s+(.+?)\s+(\d{2,4})(?:،\s*(\d{1,2}:\d{2}))?$/);
+  if (!match) return normalized;
+  const [, day, month, year, time] = match;
+  return `${Number(day)} ${month} ${year}${time ? `، ${time}` : ""}`;
+}
+
 function postDate(post) {
-  const date = post.detail.match(/[۰-۹]{2}\/[۰-۹]{2}\/[۰-۹]{2}/)?.[0]
-    || post.detail.match(/[۰-۹]{2}\s+(?:فروردین|مرداد|شهریور|آبان|آذر|دی)\s+[۰-۹]{2}(?:\s*،\s*[۰-۹:]+)?/)?.[0]
-    || "";
-  return latinDigits(date);
+  const slash = post.detail.match(/([۰-۹]{2})\/([۰-۹]{2})\/([۰-۹]{2})/);
+  if (slash) {
+    const year = latinDigits(slash[1]);
+    const month = persianMonths[Number(latinDigits(slash[2])) - 1];
+    const day = Number(latinDigits(slash[3]));
+    const time = post.publishedAt?.slice(11, 16);
+    return month ? `${day} ${month} ${year}${time ? `، ${time}` : ""}` : latinDigits(slash[0]);
+  }
+
+  const named = post.detail.match(/[۰-۹]{1,2}\s+(?:فروردین|اردیبهشت|ارديبهشت|خرداد|تیر|مرداد|شهریور|مهر|آبان|آذر|دی|بهمن|اسفند)\s+[۰-۹]{2}(?:\s*،\s*[۰-۹:]+)?/)?.[0] || "";
+  return formatNamedDate(named);
 }
 
 function commentCount(post) {
@@ -193,7 +213,7 @@ function renderComments(post) {
     item.id = `comment-${comment.id}`;
     item.innerHTML = `<div class="post_comments align">
       <div class="cmt_details">
-        <span class="dets_left"><span class="inline"><span class="cmt_date">${escapeHtml(comment.date)}</span></span></span>
+        <span class="dets_left"><span class="inline"><span class="cmt_date">${escapeHtml(formatNamedDate(comment.date))}</span></span></span>
         <span class="dets_right"><span class="inline txt">${escapeHtml(comment.author)}</span></span>
       </div>
       <div class="body_cmt"><div class="cnt"><span class="cnt_l">${commentText(comment.body)}</span></div></div>

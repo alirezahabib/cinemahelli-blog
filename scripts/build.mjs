@@ -131,6 +131,26 @@ const knownAuthors = [
 ];
 const taheriPostIds = new Set([49, 48, 42, 28, 27, 10, 7, 5, 4]);
 
+// These timestamps were preserved in the archived pages' publication metadata,
+// even where the visible theme only printed a numeric date.
+const archivedPublishedAt = new Map([
+  [54, "2018-04-04T18:40:02"],
+  [53, "2017-11-02T14:59:51"],
+  [50, "2016-11-26T16:41:10"],
+  [31, "2016-09-04T17:25:07"],
+  [29, "2016-09-04T16:44:00"],
+  [28, "2016-09-04T06:16:18"],
+  [27, "2016-09-04T06:06:21"],
+  [26, "2016-09-03T17:40:57"],
+  [24, "2016-09-03T11:55:55"],
+  [22, "2016-09-03T10:03:00"],
+  [21, "2016-09-03T09:58:39"],
+  [20, "2016-09-03T09:01:19"],
+  [19, "2016-09-02T19:30:38"],
+  [14, "2016-08-30T18:01:02"],
+  [6, "2016-08-25T18:03:47"],
+]);
+
 function authorFor(post) {
   if (post.bodyHtml.includes("محمّد عبّاسی")) return "محمّد عبّاسی";
   if (taheriPostIds.has(post.id)) return "آقای طاهری";
@@ -144,6 +164,12 @@ function bodyFor(post) {
     /<div\s+style=("|')text-align:\s*right;?\1>\s*<font\b[^>]*>\s*نویسنده:\s*<\/font>\s*<font\b[^>]*>\s*محمّد عبّاسی\s*<\/font>\s*<\/div>/i,
     "",
   );
+}
+
+function titleFor(post) {
+  return post.title
+    .replace(/^™\s*/, "")
+    .replace(/^نشست\s+146\s*-\s*/, "نشست 146 - ");
 }
 
 const recovered = [];
@@ -167,7 +193,8 @@ const posts = source.posts.map((post) => {
   }
   return {
     ...post,
-    title: post.title.replace(/^™\s*/, ""),
+    title: titleFor(post),
+    publishedAt: archivedPublishedAt.get(post.id) || null,
     author: authorFor(post),
     comments: commentsByPost.get(post.id) || [],
     category: categoryFor(post.id),
