@@ -25,6 +25,17 @@ npm run dev
 
 The build step rewrites archived image URLs to locally recovered files, generates `public/data/posts.json`, the recovery report, RSS, and the sitemap.
 
+It also renders complete HTML using the browser's existing renderer into
+`public/_rendered/` and generates `route-manifest.json`. These generated files are
+committed so deployments have a complete snapshot. Run `npm run build` after
+content or template changes, then `npm test` to check canonical URLs, redirects,
+pagination, rendered content, and PDF delivery.
+
+The Worker serves these snapshots with canonical HTML and HTTP headers. It
+redirects HTTP/www, first-page query variants, and post aliases to the preferred
+HTTPS URLs. Pagination pages have independent canonical URLs. Unknown pages
+return 404 instead of the homepage. Internal snapshot URLs are not public routes.
+
 ## Deploy to Cloudflare Workers
 
 ```sh

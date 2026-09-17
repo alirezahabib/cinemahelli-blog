@@ -288,3 +288,6 @@ await writeFile(path.join(publicDir, "sitemap.xml"), `<?xml version="1.0" encodi
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${sitemapEntries.join("")}</urlset>\n`);
 
 console.log(`Built ${posts.length} records (${publishedPosts.length} visible); ${recovered.length} media files local, ${unavailable.length} unavailable at source.`);
+
+const { prerender } = await import("./prerender.mjs");
+await prerender(sitemapPaths);

@@ -5,10 +5,12 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/build.mjs",
+    "test": "node scripts/check-seo.mjs",
     "dev": "npm run build && npx wrangler dev",
     "deploy": "npm run build && npx wrangler deploy"
   },
   "devDependencies": {
+    "linkedom": "^0.18.13",
     "wrangler": "^4.36.0"
   }
 }

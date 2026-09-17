@@ -81,7 +81,12 @@ function updatePageMeta(title, description = defaultDescription) {
     canonical.rel = "canonical";
     document.head.append(canonical);
   }
-  canonical.href = `${location.origin}${location.pathname}${location.search}`;
+  const url = new URL(location.pathname, "https://cinemahelli.ir");
+  const post = posts.find((item) => item.id === Number(url.pathname.match(/^\/post\/(\d+)/)?.[1]));
+  if (post) url.pathname = postUrl(post);
+  const page = Number(new URL(location.href).searchParams.get("page"));
+  if (!post && Number.isInteger(page) && page > 1) url.searchParams.set("page", page);
+  canonical.href = url.href;
 }
 
 function unavailableImageOnly(post) {
@@ -267,7 +272,8 @@ function renderList(items, page = 1) {
     for (let number = 1; number <= pages; number++) {
       const link = document.createElement("a");
       const url = new URL(location.href);
-      url.searchParams.set("page", number);
+      if (number === 1) url.searchParams.delete("page");
+      else url.searchParams.set("page", number);
       link.href = url.pathname + url.search;
       link.dataset.route = "";
       link.textContent = String(number);
